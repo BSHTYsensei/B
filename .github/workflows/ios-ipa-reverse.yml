@@ -2,8 +2,7 @@ name: iOS App Bundle Deep Reverse Analysis
 
 on:
   push:
-    paths:
-      - '*.ipa'
+    
   workflow_dispatch:
 
 permissions:
