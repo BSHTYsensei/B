@@ -22,7 +22,7 @@ jobs:
       INCLUDE_RAW_BINARIES: 'false'
       FULL_DISASSEMBLY: 'true'
       EXTRACT_ASSETS: 'true'
-      WORK_DIR: ${{ runner.temp }}/ipa-reverse
+      WORK_DIR: ${{ github.workspace }}/.ipa-reverse-work
 
     steps:
       - name: Checkout repository
@@ -696,7 +696,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: ios-app-deep-reverse-analysis
-          path: ${{ runner.temp }}/ipa-reverse/analysis/
+          path: .ipa-reverse-work/analysis/
           if-no-files-found: error
           compression-level: 6
           retention-days: 14
